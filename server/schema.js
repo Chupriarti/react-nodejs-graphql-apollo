@@ -17,7 +17,7 @@ const schema = buildSchema(`
         id: ID
         username: String!
         age: Int!
-        posts: [Post]!
+        posts: [PostInput]
     }
     input PostInput {
         id: ID
@@ -29,7 +29,7 @@ const schema = buildSchema(`
         getAllUsers: [User]
         getuser(id: ID): User
     }
-    
+
 `);
 
 module.exports  = schema;
