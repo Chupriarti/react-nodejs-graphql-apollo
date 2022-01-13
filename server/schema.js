@@ -24,6 +24,12 @@ const schema = buildSchema(`
         title: String!
         content: String!
     }
+
+    type Query {
+        getAllUsers: [User]
+        getuser(id: ID): User
+    }
+    
 `);
 
 module.exports  = schema;
