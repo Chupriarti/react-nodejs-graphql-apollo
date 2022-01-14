@@ -27,7 +27,7 @@ const schema = buildSchema(`
 
     type Query {
         getAllUsers: [User]
-        getuser(id: ID): User
+        getUser(id: ID): User
     }
 
 `);
