@@ -5,6 +5,16 @@ const schema = require('./schema');
 
 const app = express();
 app.use(cors());
+
+const root = {
+    getAllUsers: () => {
+
+    },
+    getUser: ({id}) => {
+
+    }
+}
+
 app.use('/graphql', graphqlHTTP({
     graphiql: true,
     schema
