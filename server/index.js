@@ -13,6 +13,13 @@ const users = [
 const app = express();
 app.use(cors());
 
+const createUser = (input) => {
+    const id = Date.now();
+    return {
+        id, ...input
+    }
+}
+
 const root = {
     getAllUsers: () => {
         return users;
@@ -21,7 +28,9 @@ const root = {
         return users.find(user => user.id === id);
     },
     createUser: ({input}) => {
-        
+        const user = createUser(input);
+        users.push(user);
+        return user;
     }
 }
 
