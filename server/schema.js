@@ -29,7 +29,7 @@ const schema = buildSchema(`
         getAllUsers: [User]
         getUser(id: ID): User
     }
-    type Mutations {
+    type Mutation {
         createUser(input: UserInput): User
     }
 `);
