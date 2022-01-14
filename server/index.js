@@ -19,6 +19,9 @@ const root = {
     },
     getUser: ({id}) => {
         return users.find(user => user.id === id);
+    },
+    createUser: ({input}) => {
+        
     }
 }
 
