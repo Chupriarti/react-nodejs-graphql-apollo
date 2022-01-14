@@ -9,16 +9,17 @@ app.use(cors());
 
 const root = {
     getAllUsers: () => {
-
+        return users;
     },
     getUser: ({id}) => {
-
+        return users.find(user => user.id === id);
     }
 }
 
 app.use('/graphql', graphqlHTTP({
     graphiql: true,
-    schema
+    schema,
+    rootValue: root
 }));
 
 app.listen(5000, () => console.log('Server started at 5000'));
