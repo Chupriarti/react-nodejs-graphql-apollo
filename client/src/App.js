@@ -31,7 +31,7 @@ function App() {
       </form>
       <div>
         {users.map(user => 
-          <div className="user">{user.id}. {user.username}</div>
+          <div key={user.id} className="user">{user.id}. {user.username}</div>
         )}
       </div>
     </div>
