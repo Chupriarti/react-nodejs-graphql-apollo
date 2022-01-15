@@ -4,13 +4,13 @@ import App from './App';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  url: 'http://localhost:5000/graphql',
-  cache: new InMemoryCache
+    uri: 'http://localhost:5000/graphql',
+    cache: new InMemoryCache()
 })
 
 ReactDOM.render(
     <ApolloProvider client={client}>
-      <App />
+        <App />
     </ApolloProvider>,
   document.getElementById('root')
 );
