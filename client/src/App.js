@@ -4,7 +4,14 @@ import './app.css'
 function App() {
   return (
     <div>
-      React GraphQL App
+      <form>
+        <input type="text" />
+        <input type="number" />
+        <div className='btns'> 
+          <button>Add</button>
+          <button>Get</button>
+        </div>
+      </form>
     </div>
   );
 }
