@@ -6,6 +6,8 @@ import { GET_ALL_USERS } from './query/user';
 function App() {
   const {data, loading, error} = useQuery(GET_ALL_USERS);
   const [users, setUsers] = React.useState([]);
+  const [username, setUsername] = React.useState("");
+  const [age, setAge] = React.useState("");
 
   React.useEffect(() => {
     if (!loading) {
@@ -22,8 +24,8 @@ function App() {
   return (
     <div>
       <form>
-        <input type="text" />
-        <input type="number" />
+        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" />
+        <input value={age} onChange={(e) => setAge(e.target.value)} type="number" />
         <div className='btns'> 
           <button>Add</button>
           <button>Get</button>
