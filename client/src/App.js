@@ -2,14 +2,21 @@ import { useMutation, useQuery } from '@apollo/client';
 import React from 'react';
 import './app.css'
 import { CREATE_USER } from './mutations/user';
-import { GET_ALL_USERS } from './query/user';
+import { GET_ALL_USERS, GET_ONE_USER } from './query/user';
 
 function App() {
   const {data, loading, error, refetch} = useQuery(GET_ALL_USERS, {pollInterval: 500});
+  const {data: oneUser, loading: loadingOneUser} = useQuery(GET_ONE_USER, {
+    variables: {
+      id: 1
+    }
+  });
   const [newUser] = useMutation(CREATE_USER);
   const [users, setUsers] = React.useState([]);
   const [username, setUsername] = React.useState("");
   const [age, setAge] = React.useState(0);
+
+  console.log("GET_ONE_USER oneUser", oneUser);
 
   React.useEffect(() => {
     if (!loading) {
