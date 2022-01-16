@@ -5,7 +5,7 @@ import { CREATE_USER } from './mutations/user';
 import { GET_ALL_USERS } from './query/user';
 
 function App() {
-  const {data, loading, error} = useQuery(GET_ALL_USERS);
+  const {data, loading, error, refetch} = useQuery(GET_ALL_USERS);
   const [newUser] = useMutation(CREATE_USER);
   const [users, setUsers] = React.useState([]);
   const [username, setUsername] = React.useState("");
@@ -32,6 +32,11 @@ function App() {
     })
   }
 
+  const getAll = (e) => {
+    e.preventDefault();
+    refetch();
+  }
+
   if (loading){
     return (
       <h1>Loading...</h1>
@@ -45,7 +50,7 @@ function App() {
         <input value={age} onChange={(e) => setAge(parseInt(e.target.value))} type="number" />
         <div className='btns'> 
           <button onClick={(e) => addUser(e)}>Add</button>
-          <button>Get</button>
+          <button onClick={(e) => getAll(e)}>Get</button>
         </div>
       </form>
       <div>
