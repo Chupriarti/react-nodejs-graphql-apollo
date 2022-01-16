@@ -42,7 +42,7 @@ function App() {
     <div>
       <form>
         <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" />
-        <input value={age} onChange={(e) => setAge(e.target.value)} type="number" />
+        <input value={age} onChange={(e) => setAge(parseInt(e.target.value))} type="number" />
         <div className='btns'> 
           <button onClick={(e) => addUser(e)}>Add</button>
           <button>Get</button>
