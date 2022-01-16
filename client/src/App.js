@@ -5,7 +5,7 @@ import { CREATE_USER } from './mutations/user';
 import { GET_ALL_USERS } from './query/user';
 
 function App() {
-  const {data, loading, error, refetch} = useQuery(GET_ALL_USERS);
+  const {data, loading, error, refetch} = useQuery(GET_ALL_USERS, {pollInterval: 500});
   const [newUser] = useMutation(CREATE_USER);
   const [users, setUsers] = React.useState([]);
   const [username, setUsername] = React.useState("");
