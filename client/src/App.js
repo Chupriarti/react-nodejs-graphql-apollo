@@ -18,7 +18,7 @@ function App() {
   }, [data]);
 
   const addUser = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     newUser({
       variables: {
         input: {
@@ -26,9 +26,8 @@ function App() {
         }
       }
     }).then(({data}) => {
-      console.log(data)
-      setUsername('')
-      setAge(0)
+      setUsername('');
+      setAge(0);
     })
   }
 
